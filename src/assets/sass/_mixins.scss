@@ -1,0 +1,21 @@
+@mixin full-screen {
+  display: flex;
+  width: 100%;
+  height: 100%;
+}
+
+@mixin headerFooter-colour {
+  background-color: #41b883;
+  color: white;
+  padding: 20px;
+}
+
+@mixin button-nav {
+  cursor: pointer;
+  font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  font-weight: 900;
+}
+
+ul{
+  list-style-type: none;
+}

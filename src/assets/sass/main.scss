@@ -1,0 +1,28 @@
+@use '_mixins.scss' as mixins;
+
+$main-color: #f0f0f0;
+
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html{
+  width: 100vw;
+  height: 100vh;
+}
+
+body{
+  @include mixins.full-screen;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+#app{
+  @include mixins.full-screen;
+  flex-direction: column;
+  justify-content: space-between;
+  background-color: $main-color;
+}
