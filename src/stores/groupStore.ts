@@ -35,7 +35,7 @@ export const useGroupStore = defineStore('groupStore', () => {
 
   const modifyGroup = async (idGroup: string, group: GroupUpdate) => {
     const indexGroup = groups.value.findIndex(
-      (group: Group) => group.Id.toString() === idGroup
+      (group: Group) => group.id.toString() === idGroup
     )
     await fetch(`http://localhost:5181/Group/${idGroup}`, {
       method: 'PUT',
@@ -59,16 +59,17 @@ export const useGroupStore = defineStore('groupStore', () => {
         'Content-Type': 'application/json'
       }
     })
+    groups.value = groups.value.filter((group: Group) => group.id.toString() !== idGroup)
   }
 
   const convertGroupUpdateToGroup = (groupUpdate: GroupUpdate, group: Group): Group => {
     return {
-      Id: group.Id,
-      Name: groupUpdate.Name,
-      Password: groupUpdate.Password,
-      CreatedOn: group.CreatedOn,
-      ExplicitContent: groupUpdate.ExplicitContent,
-      Genre: groupUpdate.Genre
+      id: group.id,
+      name: groupUpdate.name,
+      password: groupUpdate.password,
+      createdOn: group.createdOn,
+      explicitContent: groupUpdate.explicitContent,
+      genre: groupUpdate.genre
     }
   }
 
