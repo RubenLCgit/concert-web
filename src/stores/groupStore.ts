@@ -9,7 +9,7 @@ export const useGroupStore = defineStore('groupStore', () => {
   const numberOfGroups = ref<number>(0)
 
   const createGroup = async (group: CreateGroup) => {
-    const res = await fetch('http://localhost:7216/Group', {
+    const res = await fetch('http://localhost:5181/Group', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json'
@@ -21,14 +21,14 @@ export const useGroupStore = defineStore('groupStore', () => {
   }
 
   const getGroups = async () => {
-    const res = await fetch('http://localhost:7216/Group')
+    const res = await fetch('http://localhost:5181/Group')
     const data = await res.json()
     groups.value = data
     numberOfGroups.value = data.length
   }
 
   const getGroup = async (idGroup: string) => {
-    const res = await fetch(`http://localhost:7216/Group/${idGroup}`)
+    const res = await fetch(`http://localhost:5181/Group/${idGroup}`)
     const data = await res.json()
     group.value = data
   }
@@ -37,7 +37,7 @@ export const useGroupStore = defineStore('groupStore', () => {
     const indexGroup = groups.value.findIndex(
       (group: Group) => group.Id.toString() === idGroup
     )
-    await fetch(`http://localhost:7216/Group/${idGroup}`, {
+    await fetch(`http://localhost:5181/Group/${idGroup}`, {
       method: 'PUT',
       headers: {
         'Content-Type': 'application/json'
@@ -53,7 +53,7 @@ export const useGroupStore = defineStore('groupStore', () => {
   }
 
   const deleteGroup = async (idGroup: string) => {
-    await fetch(`http://localhost:7216/Group/${idGroup}`, {
+    await fetch(`http://localhost:5181/Group/${idGroup}`, {
       method: 'DELETE',
       headers: {
         'Content-Type': 'application/json'
