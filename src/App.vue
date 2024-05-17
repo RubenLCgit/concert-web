@@ -7,4 +7,8 @@ import MainLayoutView from './views/MainLayoutView.vue';
 </template>
 
 <style scoped lang="scss">
+.layoutContainer {
+  display: flex;
+  flex-direction: column;
+}
 </style>
