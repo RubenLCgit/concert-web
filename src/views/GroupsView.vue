@@ -16,14 +16,14 @@ getGroups();
     <h1>Registered music groups</h1>
     <div class="groupsContainer__list">
       <ul class="groupsContainer__ul">
-        <li v-for="group in groups" :key="group.Id">
+        <li v-for="group in groups" :key="group.id">
           <groupItem
-            :groupId = "group.Id"
-            :groupName = "group.Name"
-            :groupPassword = "group.Password"
-            :groupCreatedOn = "group.CreatedOn"
-            :groupExplicitContent = "group.ExplicitContent"
-            :groupGenre = "group.Genre"
+            :groupId = "group.id"
+            :groupName = "group.name"
+            :groupPassword = "group.password"
+            :groupCreatedOn = "group.createdOn"
+            :groupExplicitContent = "group.explicitContent"
+            :groupGenre = "group.genre"
           ></groupItem>
         </li>
       </ul>
