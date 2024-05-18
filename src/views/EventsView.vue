@@ -2,6 +2,7 @@
 import { storeToRefs } from 'pinia';
 import { useEventStore } from '@/stores/eventStore';
 import eventItem from '@/components/modelItems/eventItem.vue';
+import createButton from '../components/layout/createButton.vue';
 
 const eventStore = useEventStore();
 const { events } = storeToRefs(eventStore);
@@ -11,6 +12,7 @@ getEvents();
 </script>
 
 <template>
+  <createButton></createButton>
   <div class="eventsContainer">
     <h1>Registered events</h1>
     <div class="eventsContainer__list">
