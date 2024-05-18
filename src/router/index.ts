@@ -16,8 +16,31 @@ const router = createRouter({
       // this generates a separate chunk (About.[hash].js) for this route
       // which is lazy-loaded when the route is visited.
       component: () => import('../views/EventsView.vue')
+    },
+    {
+      path: '/login',
+      name: 'login',
+      component: () => import('../views/LoginGroupView.vue')
+    },
+    {
+      path: '/register',
+      name: 'register',
+      component: () => import('../views/RegisterGroupView.vue')
+    },
+    {
+      path: '/registerEvent',
+      name: 'registerEvent',
+      component: () => import('../views/RegisterEventsView.vue')
     }
   ]
+})
+
+router.beforeEach((to, from, next) => {
+  if (to.name === 'registerEvent' && !localStorage.getItem('isLogged')) {
+    next({ name: 'login' })
+  } else {
+    next()
+  }
 })
 
 export default router

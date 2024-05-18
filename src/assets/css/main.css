@@ -16,19 +16,22 @@ html {
 body {
   display: flex;
   width: 100%;
-  height: 100%;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
+  min-height: 100%;
 }
 
 #app {
   display: flex;
   width: 100%;
-  height: 100%;
   flex-direction: column;
-  justify-content: space-between;
+  justify-content: space-evenly;
   background-color: #f0f0f0;
+}
+
+.v-application__wrap{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
 /*# sourceMappingURL=main.css.map */
