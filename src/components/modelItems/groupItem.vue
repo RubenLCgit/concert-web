@@ -4,7 +4,6 @@ import { computed, defineProps } from 'vue';
 const props = defineProps<{
   groupId: number,
   groupName: string,
-  groupPassword: string,
   groupCreatedOn: Date,
   groupExplicitContent: boolean,
   groupGenre: string
@@ -42,10 +41,6 @@ const transformExplicitContent = computed(() => {
           <div class="groupContainer__property">
             <h4>Name:</h4>
             <p>{{ groupName }}</p>
-          </div>
-          <div class="groupContainer__property">
-            <h4>Password:</h4>
-            <p>{{ groupPassword }}</p>
           </div>
           <div class="groupContainer__property">
             <h4>Created on:</h4>
