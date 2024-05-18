@@ -27,4 +27,11 @@ body {
   background-color: #f0f0f0;
 }
 
+.v-application__wrap{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
 /*# sourceMappingURL=main.css.map */
