@@ -66,7 +66,6 @@ export const useGroupStore = defineStore('groupStore', () => {
     return {
       id: group.id,
       name: groupUpdate.name,
-      password: groupUpdate.password,
       createdOn: group.createdOn,
       explicitContent: groupUpdate.explicitContent,
       genre: groupUpdate.genre
