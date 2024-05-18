@@ -1,0 +1,30 @@
+<script setup lang="ts">
+import { RouterLink } from 'vue-router';
+import { storeToRefs } from 'pinia';
+// import { useAuthStore } from '../../stores/';
+
+// const authStore = useAuthStore();
+
+// const { isLogged } = storeToRefs(authStore);
+
+// console.log(isLogged.value);
+
+</script>
+
+<template>
+  <!-- <div v-if="isLogged" class="buttonCreated"> -->
+    <RouterLink to="/registerEvent">
+      <v-btn color="green">Create</v-btn>
+    </RouterLink>
+  <!-- </div> -->
+</template>
+
+
+<style scoped lang="scss">
+.buttonCreated {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 10px;
+}
+</style>
